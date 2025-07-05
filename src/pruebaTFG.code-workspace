@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../../../../../pruebas TFG/pruebaTFG"
+		},
+		{
+			"name": "collarPhilly",
+			"path": "../../collarPhilly"
+		},
+		{
+			"name": "collaretphilly",
+			"path": ".."
+		}
+	],
+	"settings": {}
+}

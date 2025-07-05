@@ -1,0 +1,74 @@
+
+#include <Arduino.h>
+
+const int pinSensor[8] = {36, 39, 34, 35, 32, 33, 25, 26};
+const int numSensores  = 8;
+
+const float vRef     = 3.3;
+const int   resolADC = 4095;
+float       voltSuave[8] = {0};
+
+const int N_MUESTRAS = 5;  // <- número de lecturas para promediar
+
+void setup() {
+  Serial.begin(115200);
+  analogReadResolution(12);
+
+  for (int i = 0; i < numSensores; i++) {
+    Serial.print("Sensor canal ");
+    Serial.print(i + 1);
+    Serial.print(" pin ");
+    Serial.println(pinSensor[i]);
+  }
+  Serial.println("----------------------------------");
+}
+
+void loop() {
+  for (int i = 0; i < numSensores; i++) {
+    // 1) MEDIA DE N_MUESTRAS LECTURAS RÁPIDAS
+    long suma = 0;
+    for (int k = 0; k < N_MUESTRAS; k++) {
+      suma += analogRead(pinSensor[i]);
+      delayMicroseconds(10);  // deja que el sensor se estabilice (>5 µs)
+    }
+    float rawMean = float(suma) / N_MUESTRAS;
+
+    // 2) CONVERTIR MEDIA A VOLTAJE
+    float volt = rawMean * (vRef / resolADC);
+
+    // 3) FILTRADO EXPONENCIAL (α = 0.1)
+    voltSuave[i] = 0.9f * voltSuave[i] + 0.1f * volt;
+
+    // 4) ESTIMACIÓN DE PESO (tu regresión)
+    float peso = 0.7224f * sq(voltSuave[i])
+               + 0.2238f * voltSuave[i]
+               + 0.0192f;
+
+    // 5) IMPRESIÓN
+    Serial.print("Sensor canal ");
+    Serial.print(i + 1);
+    Serial.print(" → Vout suau: ");
+    Serial.print(voltSuave[i], 3);
+    Serial.print(" V  |  Pes: ");
+    Serial.print(peso, 3);
+    Serial.print(" kg  |  Zona: ");
+
+    // 6) CLASIFICACIÓN
+    if (voltSuave[i] < 0.05f) {
+      Serial.println("SENSE PRESSIÓ");
+    } else if (voltSuave[i] < 0.20f) {
+      Serial.println("PRESSIÓ BAIXA – cap risc");
+    } else if (voltSuave[i] < 0.55f) {
+      Serial.println("PRESSIÓ MODERADA – zona segura");
+    } else if (voltSuave[i] < 0.85f) {
+      Serial.println("PRESSIÓ ELEVADA – vigilar");
+    } else if (voltSuave[i] < 1.20f) {
+      Serial.println("PRESSIÓ ALTA – risc potencial");
+    } else {
+      Serial.println("PRESSIÓ CRÍTICA – possible saturació!");
+    }
+  }
+
+  Serial.println("----------------------------------");
+  delay(2000);
+}

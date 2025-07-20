@@ -3,7 +3,7 @@
 // #include <Wire.h>
 // #include <SHT31.h>
 
-// //Configuració sensors de temperatura i humitat + el MUX 
+// //Configuració sensors de temperatura i humitat + el mux 
 // #define TCAADDR 0x70
 // const uint8_t NUM_TEMP = 8;
 // SHT31 sht31[NUM_TEMP] = {
@@ -19,7 +19,7 @@
 // const float vRef     = 3.3f;
 // const int   resolADC = 4095;
 
-// //Commutació del MUX amb els canals del 0 fins al 7
+// //Commutació del mux amb els canals del 0 al 7
 // void tcaselect(uint8_t i) {
 //   if (i > 7) return;
 //   Wire.beginTransmission(TCAADDR);
@@ -54,11 +54,10 @@
 //     Serial.print(F(" pin ADC "));
 //     Serial.println(pinPress[i]);
 //   }
-//   Serial.println(F("================================"));
 // }
 
 // void loop() {
-//   // --- LECTURA DE TEMPERATURAS ---
+//   //lectura de les temperatures
 //   Serial.println(F("--- Temperatures ---"));
 //   for (uint8_t ch = 0; ch < NUM_TEMP; ch++) {
 //     tcaselect(ch);
@@ -66,7 +65,7 @@
 //     if (sht31[ch].read()) {
 //       Serial.print(F("Temp canal "));
 //       Serial.print(ch);
-//       Serial.print(F(" → T: "));
+//       Serial.print(F("  T: "));
 //       Serial.print(sht31[ch].getTemperature(), 2);
 //       Serial.print(F(" °C  H: "));
 //       Serial.print(sht31[ch].getHumidity(), 1);
@@ -76,8 +75,8 @@
 //       Serial.println(ch);
 //     }
 //   }
-//   // --- LECTURA DE PRESIONES ---
-//   Serial.println(F("--- Presiones ---"));
+
+//   Serial.println(F("--- Presions ---"));
 //   for (uint8_t i = 0; i < NUM_PRESS; i++) {
 //     // 1) media de N_MUESTRAS lecturas rápidas
 //     long suma = 0;
@@ -86,42 +85,16 @@
 //       delayMicroseconds(10);
 //     }
 //     float rawMean = float(suma) / N_MUESTRAS;
-//     // 2) convertir a voltaje
 //     float volt = rawMean * (vRef / resolADC);
-//     // 3) filtrado exponencial α=0.1
 //     voltSuave[i] = 0.9f * voltSuave[i] + 0.1f * volt;
-//     // 4) regresión a “peso” (tu fórmula de Excel)
-//     float peso = 0.7224f * sq(voltSuave[i])
-//                + 0.2238f * voltSuave[i]
-//                + 0.0192f;
 
-//     // 5) impresión
 //     Serial.print(F("Press canal "));
 //     Serial.print(i + 1);
-//     Serial.print(F(" → V: "));
+//     Serial.print(F("  V: "));
 //     Serial.print(voltSuave[i], 3);
-//     Serial.print(F(" V  P: "));
-//     Serial.print(peso, 3);
-//     Serial.print(F(" kg  Zona: "));
-//     // 6) clasificación
-//     if (voltSuave[i] < 0.05f) {
-//       Serial.println(F("SENSE PRESSIÓ"));
-//     } else if (voltSuave[i] < 0.20f) {
-//       Serial.println(F("BAIXA"));
-//     } else if (voltSuave[i] < 0.55f) {
-//       Serial.println(F("MODERADA"));
-//     } else if (voltSuave[i] < 0.85f) {
-//       Serial.println(F("ELEVADA"));
-//     } else if (voltSuave[i] < 1.20f) {
-//       Serial.println(F("ALTA"));
-//     } else {
-//       Serial.println(F("CRÍTICA"));
-//     }
+//     Serial.print(F(" V "));
 //   }
-
-//   Serial.println(F("================================\n"));
 //   delay(2000);
 // }
 
 
-//prova conjunta BLE 

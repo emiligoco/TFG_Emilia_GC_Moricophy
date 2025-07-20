@@ -2,6 +2,7 @@ import asyncio
 import json
 from bleak import BleakClient, BleakScanner
 
+#Adreces BLE
 SERVICE_UUID = "6c8dfa24-87a0-41b4-a47c-f1674f1974c7"
 CHAR_UUID_TX = "8053f0ba-2459-4622-9838-a4f5d2b55e61"
 OUTPUT_FILE = "dades.json"

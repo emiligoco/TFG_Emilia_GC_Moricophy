@@ -5,16 +5,8 @@
 // #include <SHT31.h>
 
 // #define TCAADDR 0x70
-
-// SHT31 sht31_1 = SHT31(0x45);
 // SHT31 sht31_2 = SHT31(0x45);
-// SHT31 sht31_3 = SHT31(0x45);
-// SHT31 sht31_4 = SHT31(0x45);
-// SHT31 sht31_5 = SHT31(0x45);
 // SHT31 sht31_6 = SHT31(0x45);
-// SHT31 sht31_7 = SHT31(0x45);
-// SHT31 sht31_8 = SHT31(0x45);
-
 
 
 // void tcaselect(uint8_t i) {
@@ -29,20 +21,20 @@
 //     Serial.begin(115200);
 //     Wire.begin();
     
-//     Serial.println("Inicializando sensores SHT31...");
-//     //Inicializar el primer sensor en el canal 2
+//     Serial.println("Inicialitzant sensors SHT31...");
+       //Canal 2
 //     tcaselect(2);
 //     if (!sht31_1.begin()) {  // Dirección del SHT31
-//       Serial.println("Error al encontrar SHT31 en el canal 2");
+//       Serial.println("Error al trobar SHT31 en el canal 2");
 //     } else {
-//       Serial.println("SHT31 en canal 2 detectado.");
+//       Serial.println("SHT31 en canal 2 detectat");
 //     }
-//     //Inicializar el segundo sensor en el canal 6
+//     //Canal 6
 //     tcaselect(6);
 //     if (!sht31_2.begin()) {  
-//       Serial.println("Error al encontrar SHT31 en el canal 6");
+//       Serial.println("Error al trobar SHT31 en el canal 6");
 //     } else {
-//       Serial.println("SHT31 en canal 6 detectado.");
+//       Serial.println("SHT31 en canal 6 detectat");
 //     }
 //   }
 
@@ -68,30 +60,10 @@
 // }
 
 
-  
 // void loop() {
-//     leerSensor(sht31_1, 0, "Sensor 0");
-//     leerSensor(sht31_2, 1, "Sensor 1");
 //     leerSensor(sht31_2, 2, "Sensor 2");
-//     leerSensor(sht31_2, 3, "Sensor 3");
-//     leerSensor(sht31_2, 4, "Sensor 4");
-//     leerSensor(sht31_2, 5, "Sensor 5");
 //     leerSensor(sht31_2, 6, "Sensor 6");
-//     leerSensor(sht31_2, 7, "Sensor 7");
 //     delay(2000);
 // }
 
-// void setup() {
-//   Serial.begin(115200);
-// }
 
-// void loop(){
-//   int valor = analogRead(34);
-//   float voltatge = valor * (3.3/4095.0);
-//   // Serial.println("Valor ADC: ");
-//   // Serial.println(valor);
-//   Serial.println(" | Voltatge: ");
-//   Serial.println(voltatge, 3);
-//   delay(2000);
-
-// }

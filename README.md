@@ -58,7 +58,7 @@ Aquest projecte de Treball Final de Grau consisteix en el disseny i la implement
 ## Manual d’usuari
 
 1. **Col·loca** el collaret amb els sensors integrats sobre el pacient.
-2. **Connecta** cada sensor de la zona anatòmica, al connector correponent (veure docX de la carpeta Docs)
+2. **Connecta** cada sensor de la zona anatòmica, al connector correponent (veure doc1 de la carpeta docs)
 3. **Connecta** el sistema mitjançant USB per carregar el programa al microcontrolador.
 4. Executa el codi de l’ESP32 (`main.cpp`) per començar a llegir les dades.
 5. Al teu ordinador:
@@ -67,7 +67,7 @@ Aquest projecte de Treball Final de Grau consisteix en el disseny i la implement
      ```bash
      streamlit run web.py
      ```
-6. Observa les dades en temps real: zones en verd, taronja o vermell segons risc.
+6. Observa les dades en temps real: zones en verd, taronja o vermell segons risc, (veure doc2 de la carpeta docs).
 
 ---
 

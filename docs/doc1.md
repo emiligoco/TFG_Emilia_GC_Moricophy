@@ -1,5 +1,5 @@
 
-# Assignació de sensors a zones anatòmiques i connexions de placa
+# Assignació de sensors a zones anatòmiques i connexions a la PCB
 
 Aquest document descriu on s'ha col·locat cada sensor al collaret Philadelphia, quin connector de la PCB utilitza, i com es relaciona amb la numeració al codi.
 

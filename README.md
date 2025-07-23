@@ -46,11 +46,14 @@ Aquest projecte de Treball Final de Grau consisteix en el disseny i la implement
 
 ### Hardware
 
-- ESP32-WROOM-32 Dev Kit
 - 8x SHT31 (Sensirion)
 - 8x FlexiForce A401
-- Multiplexor I2C TCA9548A
-- Bateria LiPo 3.7V
+- PCB general amb:
+  - ESP32-WROOM-32 Dev Kit
+  - Multiplexor I2C TCA9548A
+  - Circuits de condicionament necessàris
+  - Bateria LiPo 3.7V
+  - Alimentació
 - Collaret ortopèdic Philadelphia
 
 ---

@@ -58,20 +58,35 @@ Aquest projecte de Treball Final de Grau consisteix en el disseny i la implement
 ## Manual d’usuari
 
 1. **Col·loca** el collaret amb els sensors integrats sobre el pacient.
-2. **Connecta** el sistema mitjançant USB o bateria.
-3. Executa el codi de l’ESP32 (`main.cpp`) per començar a llegir les dades.
-4. Al teu ordinador:
-   - Llença `ble.py` per rebre les dades per BLE.
-   - Llença `web.py` per obrir la visualització web.
-5. Observa les dades en temps real: zones en verd, taronja o vermell segons risc.
+2. **Connecta** cada sensor de la zona anatòmica, al connector correponent (veure docX de la carpeta Docs)
+3. **Connecta** el sistema mitjançant USB per carregar el programa al microcontrolador.
+4. Executa el codi de l’ESP32 (`main.cpp`) per començar a llegir les dades.
+5. Al teu ordinador:
+   - Llença `ble.py` per rebre les dades per BLE. Si s'ha connectat, desconnectar l'USB i treballar en remot.
+   - Llença `web.py` per obrir la visualització web. Per llençar aquest script, al terminal s'ha d'escriure:
+     ```bash
+     streamlit run web.py
+     ```
+6. Observa les dades en temps real: zones en verd, taronja o vermell segons risc.
 
 ---
 
 ## Exemple de sortida
 
 ```
-Temp canal 1: T = 30.45 °C  H = 56.4 %
-Press canal 1: Vout suau = 0.329V → Risc: MODERADA
+'main.cpp'
+BLE iniciat
+{"Temp": {"s1":{ "T": 30.45, "H": 56.4 },"s2":{ "T": 30.98, "H": 57.1 },...},"Press": {"s1":{ "V": 0.298 },"s2":{ "V": 0.329 },...}
+
+'ble.py'
+Escanejant dispositius BLE...
+Connectant amb C3:7A:2B:XX:XX:XX...
+Connectat! Esperant dades...
+Dades rebudes i desades
+Dades rebudes i desades
+Dades rebudes i desades
+...
+
 ```
 
 ---
@@ -101,8 +116,6 @@ streamlit run web.py
 **Emilia Gómez Colomer**  
 Grau en Enginyeria Biomèdica  
 Universitat de Girona
-Curs: 2024-2025
-Tutora: Bianca Innocenti
 
 ---
 

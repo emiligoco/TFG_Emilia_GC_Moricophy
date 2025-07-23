@@ -69,25 +69,7 @@ Aquest projecte de Treball Final de Grau consisteix en el disseny i la implement
      ```
 6. Observa les dades en temps real: zones en verd, taronja o vermell segons risc, (veure doc2 de la carpeta docs).
 
----
-
-## Exemple de sortida
-
-```
-'main.cpp'
-BLE iniciat
-{"Temp": {"s1":{ "T": 30.45, "H": 56.4 },"s2":{ "T": 30.98, "H": 57.1 },...},"Press": {"s1":{ "V": 0.298 },"s2":{ "V": 0.329 },...}
-
-'ble.py'
-Escanejant dispositius BLE...
-Connectant amb C3:7A:2B:XX:XX:XX...
-Connectat! Esperant dades...
-Dades rebudes i desades
-Dades rebudes i desades
-Dades rebudes i desades
-...
-
-```
+Per realitzar la validació dels diferents sensors per separat o conjuntament abans de fer servir el sistema final (`main.cpp`, `ble.py`, `web.py`), veure doc4.
 
 ---
 

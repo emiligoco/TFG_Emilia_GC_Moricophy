@@ -13,5 +13,5 @@ Aquest document explica com el sistema codifica el nivell de risc cutani en zone
 | Taronja  | Moderada             | Pressió mitjana o temperatura entre 32–34 ºC  |
 | Vermell  | Alta / crítica       | Pressió elevada o temperatura ≥ 34 ºC          |
 
-Aquest sistema visual permet identificar de forma ràpida quines zones del coll estan sotmeses a condicions que poden derivar en lesions per pressió.
+Aquest sistema visual permet identificar de forma ràpida quines zones del coll estan sotmeses a condicions que poden derivar en lesions per pressió (veure doc3).
 

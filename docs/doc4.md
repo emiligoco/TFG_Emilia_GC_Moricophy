@@ -1,7 +1,7 @@
 
 # Validació inicial dels sensors: proves sobre protoboard
 
-Aquest document recull totes les **proves experimentals preliminars** realitzades per validar el funcionament dels sensors individualment i conjuntament abans d'integrar el sistema final. Totes aquestes proves es van fer sobre protoboard, per assegurar la compatibilitat electrònica i funcional dels components.
+Aquest document recull totes les proves experimentals preliminars realitzades per validar el funcionament dels sensors individualment i conjuntament abans d'integrar el sistema final. Totes aquestes proves es van fer sobre protoboard, per assegurar la compatibilitat electrònica i funcional dels components. Les trobareu a la carpeta `test`.
 
 ---
 

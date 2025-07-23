@@ -1,11 +1,11 @@
 
 # Monitorització de factors de risc cutanis en pacients amb collarets ortopèdics Philadelphia
 
-## 🎯 Objectiu del projecte
+## Objectiu del projecte
 
 Aquest projecte de Treball Final de Grau consisteix en el disseny i la implementació d’un sistema **portable i intel·ligent** per monitoritzar en temps real **la pressió, la temperatura i la humitat** en pacients que utilitzen colls ortopèdics Philadelphia, amb la finalitat de prevenir l’aparició de lesions cutànies per pressió.
 
-## ⚙️ Components del sistema
+## Components del sistema
 
 - Sensors de **pressió FlexiForce A401**
 - Sensors **digitals de temperatura i humitat SHT31**
@@ -13,10 +13,10 @@ Aquest projecte de Treball Final de Grau consisteix en el disseny i la implement
 - **Multiplexor I2C TCA9548A**
 - Sistema de **visualització web en temps real** amb mapes de calor i pressió
 
-## 📁 Estructura del repositori
+## Estructura del repositori
 
 ```
-├── main.cpp               # Codi firmware ESP32: adquisició i enviament de dades
+├── main.cpp              # Codi firmware ESP32: adquisició i enviament de dades
 ├── ble.py                # Script Python per rebre dades via BLE i desar-les
 ├── web.py                # Interfície web en Streamlit per visualització de dades
 ├── calibraciopresio.txt  # Calibratge sensors de pressió
@@ -27,7 +27,7 @@ Aquest projecte de Treball Final de Grau consisteix en el disseny i la implement
 └── README.md             # Aquest document
 ```
 
-## 🛠️ Requisits d’instal·lació
+## Requisits d’instal·lació
 
 ### Software
 
@@ -55,7 +55,7 @@ Aquest projecte de Treball Final de Grau consisteix en el disseny i la implement
 
 ---
 
-## ▶️ Manual d’usuari
+## Manual d’usuari
 
 1. **Col·loca** el collaret amb els sensors integrats sobre el pacient.
 2. **Connecta** el sistema mitjançant USB o bateria.
@@ -67,7 +67,7 @@ Aquest projecte de Treball Final de Grau consisteix en el disseny i la implement
 
 ---
 
-## 🧪 Exemple de sortida
+## Exemple de sortida
 
 ```
 Temp canal 1: T = 30.45 °C  H = 56.4 %
@@ -76,7 +76,7 @@ Press canal 1: Vout suau = 0.329V → Risc: MODERADA
 
 ---
 
-## 📡 Manual d’instal·lació
+## Manual d’instal·lació
 
 ### Firmware ESP32
 1. Connecta l’ESP32 via USB.
@@ -96,14 +96,16 @@ streamlit run web.py
 
 ---
 
-## 👩🏻‍💻 Autora
+## Autora
 
 **Emilia Gómez Colomer**  
 Grau en Enginyeria Biomèdica  
 Universitat de Girona
+Curs: 2024-2025
+Tutora: Bianca Innocenti
 
 ---
 
-## 📄 Llicència
+## Llicència
 
 Aquest projecte es distribueix sota la llicència MIT.
